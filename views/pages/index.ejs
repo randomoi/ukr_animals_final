@@ -1,0 +1,209 @@
+<%# insert the head section code that repeats on all pages %>
+    <%- include('../inc/head') %>
+        <%# insert header section code that repeats on all pages %>
+            <%- include('../inc/header') -%>
+                <!-- section -->
+                <section class="sec_first_h">
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row align-items-center">
+                            <!-- column -->
+                            <div class="col-md-5 order-2 order-md-1">
+                                <!-- header -->
+                                <h1>Find the <span class="h">Perfect</span> Pet to Adopt</h1>
+                                <!-- text -->
+                                <div class="sub_text">
+                                    Thousands of pets in Ukraine are eagerly waiting to find new homes. Stop swiping through dating apps — your true love could be here just a few clicks away. Make the first move toward finding your soul mate!
+                                </div>
+                                <!-- link button -->
+                                <div class="btn_m_wrap">
+                                    <a class="btn_m" href="/gallery">Find pet</a>
+                                </div>
+                            </div>
+                            <!-- column -->
+                            <div class="col-md-7 order-1 order-md-2">
+                                <!-- picture -->
+                                <img class="res" src="img/i_1.jpg" alt="image of five happy dogs wearing birthday cones">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section -->
+                <section class="sec_def sec_back">
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
+                            <!-- column -->
+                            <div class="col-md-12">
+                                <div class="sec_title">
+                                    <!-- header -->
+                                    <h2>Featured <span class="h">Pets</span></h2>
+                                    <!-- text -->
+                                    <div class="sub_text">Did someone catch your attention? Don't let them get away. Make the first move.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="row">
+                            <!-- wrapper -->
+                            <div class="swiper_wrap">
+                                <!-- wrapper -->
+                                <div class="swiper mySwiper">
+                                    <!-- wrapper -->
+                                    <div class="swiper-wrapper">
+
+
+
+                                        <%# looping through 6 animals %>
+                                            <% for (var l = petsall.length, i = 0; i < l; i++) { %>
+
+                                                <%# denote the variable through the index iteration of the loop for further work %>
+                                                    <% object = petsall[i]%>
+
+                                                        <%# limit output to six pets %>
+                                                            <% if(i == 6) {%>
+                                                                <% break %>
+                                                                    <% } %>
+
+                                                                        <%# since of all the images in the line we need the first one, then we assign the first value to the variable before the separator %>
+                                                                            <%  var obj_img = object.img.split(',')[0]; %>
+                                                                                <!-- wrapper -->
+                                                                                <div class="swiper-slide">
+                                                                                    <!-- wrapper -->
+                                                                                    <div class="one_slide_h">
+                                                                                        <!-- link -->
+                                                                                        <a href="/pet/<%= object.id %>"><span  class="img" style="background-image: url(/img/<%= obj_img %>);"></span><span class="visually-hidden">image of a cute pet</span></a>
+                                                                                        <!-- title+link -->
+                                                                                        <div class="title">
+                                                                                            <a href="/pet/<%= object.id %>">
+                                                                                                <%= object.pet_name %>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <!-- text+link -->
+                                                                                        <div class="text">
+                                                                                            <a href="/pet/<%= object.id %>">
+                                                                                                <%= object.breed %>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <% } %>
+
+                                    </div>
+                                </div>
+                                <!-- control buttons -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section -->
+                <section class="sec_def">
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
+                            <!-- column -->
+                            <div class="col-md-12">
+                                <div class="sec_title">
+                                    <!-- header -->
+                                    <h2>Adoption <span class="h">Process</span></h2>
+                                    <!-- text -->
+                                    <div class="sub_text">Are you looking for unconditional love? You could find a companion to journey through life in just four simple steps.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="row">
+                            <!-- column -->
+                            <div class="col-md-3">
+                                <!-- wrapper -->
+                                <div class="pros">
+                                    <!-- wrapper -->
+                                    <div class="icon_b">
+                                        <!-- icon -->
+                                        <div class="icon" style="background-image: url(img/website.png);"></div>
+                                    </div>
+                                    <!-- text -->
+                                    <div class="title">Submit an application</div>
+                                </div>
+                            </div>
+                            <!-- column -->
+                            <div class="col-md-3">
+                                <!-- wrapper -->
+                                <div class="pros">
+                                    <!-- wrapper -->
+                                    <div class="icon_b">
+                                        <!-- icon -->
+                                        <div class="icon" style="background-image: url(img/job-interview.png);"> </div>
+                                    </div>
+                                    <!-- text -->
+                                    <div class="title">Attend an interview</div>
+                                </div>
+                            </div>
+                            <!-- column -->
+                            <div class="col-md-3">
+                                <!-- wrapper -->
+                                <div class="pros">
+                                    <!-- wrapper -->
+                                    <div class="icon_b">
+                                        <!-- icon -->
+                                        <div class="icon" style="background-image: url(img/owner.png);"></div>
+                                    </div>
+                                    <!-- text -->
+                                    <div class="title">Meet the pet</div>
+                                </div>
+                            </div>
+                            <!-- column -->
+                            <div class="col-md-3">
+                                <!-- wrapper -->
+                                <div class="pros pros_last">
+                                    <!-- wrapper -->
+                                    <div class="icon_b">
+                                        <!-- icon -->
+                                        <div class="icon" style="background-image: url(img/contract.png);"></div>
+                                    </div>
+                                    <!-- text -->
+                                    <div class="title">Sign an adoption contract</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section -->
+                <section class="sec_def sec_back sec_mb_0 ">
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row align-items-center">
+                            <!-- column -->
+                            <div class="col-md-6">
+                                <!-- picture -->
+                                <img class="res" src="img/i_2.png" alt="two people looking at the clipboard containing financial charts">
+                            </div>
+                            <!-- column -->
+                            <div class="col-md-6">
+                                <!-- wrapper -->
+                                <div class="left_con">
+                                    <!-- header -->
+                                    <h2 class="title_left">
+                                        Use of <span class="h">funds</span>
+                                    </h2>
+                                    <!-- text -->
+                                    <div class="text">
+                                        Our organization is committed to transparency. We believe that every dollar counts and you should know how it is spent. Please click the button to see how your donation will help an animal in need.
+                                    </div>
+                                    <!-- link button -->
+                                    <div class="btn_m_wrap">
+                                        <a class="btn_m" href="/useFunds">Expenses</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <%# insert footer section code that repeats on all pages %>
+                    <%- include('../inc/footer') -%>

@@ -1,0 +1,1508 @@
+@charset "UTF-8";
+
+/*--- focus indicator for accessibility, credit: https://axe.deque.com/rule-help/en/focus-indicator-missing --- */
+
+*:focus {
+    outline: 2px solid #f71e25;
+}
+
+
+/* --- hides alt text for social media links and slideshows. credit: https://www.w3.org/WAI/WCAG22/Techniques/css/C7 --- */
+
+.visually-hidden {
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+/*--- general styles --- */
+
+a,
+button,
+input,
+textarea {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #103440;
+    letter-spacing: 0.08em;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h2 {
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.res {
+    max-width: 100%;
+}
+
+.h {
+    color: #D6300B;
+}
+
+.btn_m {
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #D6300B;
+    color: #fff;
+    padding: 11px 54px;
+}
+
+.btn_m:hover {
+    background: #1C870A;
+    color: #fff;
+}
+
+
+/* --- END.general styles --- */
+
+
+/* --- header --- */
+
+header {
+    background-color: #FDF6F2;
+    padding: 17px 0;
+}
+
+header .btn_m_wrap {
+    height: 100%;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+header .menu {
+    font-size: 18px;
+    font-weight: 900;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+header .menu li {
+    display: inline-block;
+    padding-left: 30px;
+}
+
+header .menu li a {
+    color: #181818;
+}
+
+header .menu li a:hover {
+    color: #D6300B;
+}
+
+header .menu li:nth-child(1) {
+    padding-left: 0;
+}
+
+header .menu li.active a {
+    color: #D6300B;
+}
+
+header .menu_wrap .btn_m_wrap {
+    display: none;
+}
+
+header .burger {
+    text-align: right;
+    display: none;
+}
+
+header .burger .fa,
+header .burger .fa-solid {
+    cursor: pointer;
+    font-size: 21px;
+    color: #181818;
+}
+
+header .burger .fa-circle-xmark {
+    display: none;
+}
+
+
+/* --- END.header --- */
+
+
+/* --- logo --- */
+
+.logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #103440;
+}
+
+.logo:hover {
+    color: #103440;
+}
+
+.logo .icon {
+    background: #1C870A;
+    width: 48px;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.logo .in {
+    background-image: url(/img/dog_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 45px;
+    width: 45px;
+}
+
+.logo .text {
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.logo .text .b {
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1em;
+}
+
+.logo .text .s {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1em;
+}
+
+
+/* --- END.logo --- */
+
+
+/* --- responsive menu --- */
+
+.menu_adapt_open {
+    overflow-y: hidden;
+}
+
+.menu_adapt_open .menu_wrap {
+    position: fixed;
+    right: 0;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f4;
+    text-align: center;
+    z-index: 11;
+}
+
+.menu_adapt_open .burger {
+    z-index: 12;
+    position: relative;
+}
+
+.menu_adapt_open .burger .fa-bars {
+    display: none;
+}
+
+.menu_adapt_open .burger .fa-circle-xmark {
+    display: block;
+}
+
+.menu_adapt_open .menu {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.menu_adapt_open .menu li {
+    padding-left: 0px;
+    padding-bottom: 15px;
+}
+
+
+/* --- END.responsive menu --- */
+
+
+/* --- first section on home page --- */
+
+.sec_first_h {
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.sec_first_h h1 {
+    font-size: 41px;
+    line-height: 1em;
+    font-weight: 900;
+    margin-bottom: 60px;
+    position: relative;
+    max-width: 360px;
+}
+
+.sec_first_h h1:after {
+    content: "";
+    width: 170px;
+    height: 1px;
+    background: #1C870A;
+    position: relative;
+    bottom: -30px;
+    display: block;
+}
+
+.sec_first_h .btn_m_wrap .btn_m {
+    display: block;
+    max-width: 230px;
+}
+
+.sec_first_h .sub_text {
+    margin-bottom: 30px;
+}
+
+
+/* --- END.first section on home page --- */
+
+
+/* ---general section header style --- */
+
+.sec_title {
+    text-align: center;
+}
+
+.sec_title .sub_text {
+    text-align: center;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.sec_title h2 {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.sec_title h2:before {
+    content: "";
+    width: 170px;
+    height: 1px;
+    background: #1C870A;
+    position: relative;
+    top: -15px;
+    display: block;
+    left: 50%;
+    margin-left: -85px;
+}
+
+
+/* --- END.general section header style --- */
+
+
+/* --- general section indentation style --- */
+
+.sec_def {
+    margin-bottom: 100px;
+}
+
+
+/* --- END.general section indentation style --- */
+
+
+/* --- general section background style --- */
+
+.sec_back {
+    padding: 100px 0;
+    background: url(/img/back_1.png);
+}
+
+
+/* --- END.general section background style --- */
+
+.sec_mb_0 {
+    margin-bottom: 0;
+}
+
+
+/* --- main page pet section --- */
+
+.one_slide_h .img {
+    width: 100%;
+    height: 270px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.one_slide_h .title,
+.one_slide_h .text {
+    text-align: center;
+}
+
+.one_slide_h .title a {
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1em;
+    margin-bottom: 5px;
+    color: #181818;
+}
+
+.one_slide_h .text a {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1em;
+    padding-bottom: 5px;
+    color: #181818;
+}
+
+.one_slide_h:hover .title a {
+    color: #D6300B;
+}
+
+
+/* --- END.main page pet section --- */
+
+
+/* --- general slider style --- */
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #181818;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #D6300B;
+}
+
+.swiper-button-prev {
+    left: -30px;
+}
+
+.swiper-button-next {
+    right: -30px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 25px;
+}
+
+.swiper_wrap {
+    position: relative;
+}
+
+
+/* --- END.general slider style --- */
+
+
+/* --- page main section "Adoption process" --- */
+
+.pros .icon_b {
+    margin-left: auto;
+    margin-right: auto;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    background: #1C870A;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.pros .icon_b .icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+}
+
+.pros .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1em;
+    margin-top: 15px;
+}
+
+
+/* --- END.page main section "Adoption process" --- */
+
+
+/* --- END. general heading style on the left --- */
+
+.title_left {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.title_left:before {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: #1C870A;
+    position: relative;
+    top: -15px;
+    display: block;
+}
+
+
+/* --- END. general heading style on the left --- */
+
+
+/* --- general content style on the left --- */
+
+.left_con .text {
+    margin-bottom: 30px;
+}
+
+.left_con .btn_m_wrap {
+    max-width: 280px;
+}
+
+.left_con .btn_m {
+    display: block;
+}
+
+
+/* --- END.general content style on the left --- */
+
+
+/* --- general style of copyright --- */
+
+.copyright {
+    background: #1b1b1b;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.copyright .text {
+    opacity: 0.5;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+/* --- END.general style of copyright --- */
+
+
+/* --- general style of footer --- */
+
+footer {
+    background: #272727;
+    padding: 50px 0;
+}
+
+footer .logo .text .b,
+footer .logo .text .s {
+    color: #fff;
+}
+
+footer ul {
+    list-style: none;
+}
+
+
+/* --- changes color of Powered by Google to white --- */
+
+#google_translate_element .goog-te-gadget,
+#google_translate_element .goog-te-gadget a {
+    color: #f2f2f4
+}
+
+
+/* --- END.changes color of Powered by Google to white --- */
+
+footer .social {
+    margin-top: 15px;
+}
+
+footer .social li {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 0;
+}
+
+footer .social li:last-child {
+    margin-right: 0;
+}
+
+footer .social li a {
+    color: #fff;
+}
+
+footer .social li a:hover {
+    color: #ed6436;
+}
+
+footer .w_wrap .title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #ed6436;
+    margin-bottom: 25px;
+    line-height: 1em;
+}
+
+footer .w_wrap .text {
+    color: #fff;
+    line-height: 1.5em;
+}
+
+footer .w_wrap .text ul li {
+    display: block;
+    line-height: 1em;
+    margin-bottom: 10px;
+}
+
+footer .w_wrap .text ul li a {
+    color: #fff;
+}
+
+footer .w_wrap .text ul li a:hover {
+    color: #ed6436;
+}
+
+
+/* --- END.general style of footer --- */
+
+
+/* --- general style of subheader on child pages --- */
+
+.sub_header {
+    padding: 50px 0;
+    background: url(/img/back_1.png);
+    text-align: center;
+}
+
+.sub_header h1 {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: #181818;
+}
+
+.sub_header h1:after {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: #1C870A;
+    position: relative;
+    bottom: -10px;
+    display: block;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.sub_header .breadcrumbs li {
+    display: inline-block;
+    font-weight: 400;
+}
+
+.sub_header .breadcrumbs li a {
+    color: #D6300B;
+}
+
+.sub_header .breadcrumbs li a:hover {
+    color: #1C870A;
+}
+
+
+/* --- END.general style of subheader on child pages --- */
+
+
+/* --- table for "USE OF FUNDS" --- */
+
+.sec_allocation {
+    margin-top: 100px;
+}
+
+.sec_allocation .stat_info_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.sec_allocation .stat_info_wrap .title {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+
+.sec_allocation .stat_info_wrap .text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1em;
+}
+
+.sec_allocation .table_stat .one_row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 23px 27px;
+}
+
+.sec_allocation .table_stat .one_row .title {
+    font-size: 24px;
+    font-weight: 900;
+    padding-right: 15px;
+}
+
+.sec_allocation .table_stat .one_row .text {
+    font-size: 24px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.sec_allocation .table_stat .one_row:nth-child(odd) {
+    background: #fbf6f2;
+}
+
+.sec_allocation .table_stat_text {
+    text-align: center;
+    font-weight: 900;
+    margin-top: 50px;
+    line-height: 1em;
+}
+
+.sec_allocation .table_stat_text .btn_m_wrap {
+    max-width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.sec_allocation .table_stat_text .btn_m {
+    display: block;
+    padding: 14px 54px;
+}
+
+
+/* --- END.table for "USE OF FUNDS" --- */
+
+
+/* --- content on the CONTACT page --- */
+
+.sec_contact_c {
+    margin-top: 100px;
+}
+
+.sec_contact_c .map iframe {
+    width: 100%;
+}
+
+.sec_contact_c .social {
+    margin-top: 15px;
+}
+
+.sec_contact_c .social li {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 0;
+}
+
+.sec_contact_c .social li:last-child {
+    margin-right: 0;
+}
+
+.sec_contact_c .social li a {
+    color: #181818;
+}
+
+.sec_contact_c .social li a:hover {
+    color: #D6300B;
+}
+
+.sec_contact_c .contact_wrap .title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.sec_contact_c .contact_wrap .one {
+    font-size: 18px;
+    line-height: 1em;
+    margin-bottom: 30px;
+}
+
+.sec_contact_c .contact_wrap .one .b {
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+
+.sec_contact_c .contact_wrap .one .s {
+    font-weight: 400;
+}
+
+
+/* --- END.content on the CONTACT page --- */
+
+
+/* --- content on the DOCUMENTS page --- */
+
+.sec_doc_d {
+    margin-top: 100px;
+}
+
+.sec_doc_d h3 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1em;
+}
+
+.sec_doc_d .btn_m_wrap {
+    margin-top: 20px;
+    max-width: 270px;
+}
+
+.sec_doc_d .btn_m_wrap .btn_m {
+    display: block;
+}
+
+
+/* --- END.content on the DOCUMENTS page --- */
+
+
+/* --- general style for animation of accordion on the DOCUMENTS page --- */
+
+.fade {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.fade:not(.show) {
+    opacity: 0;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.accordion-button.collapsed {
+    background: #fbf6f2;
+    color: #181818;
+}
+
+.accordion-button.collapsed .fa-solid {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.accordion-button {
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    border: none;
+    background: #1C870A;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 22px 24px;
+    line-height: 1em;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.accordion-button .fa-solid {
+    font-size: 16px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+}
+
+.accordion-item h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.accordion-body {
+    background: #fbf6f2;
+    padding: 25px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.accordion-body .do_pdf {
+    color: #fff;
+    border-radius: 5px;
+    background: #D6300B;
+    padding: 12px 16px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.accordion-body .do_pdf .fa-regular {
+    margin-right: 7px;
+}
+
+.accordion-body .do_pdf:hover {
+    background: #1C870A;
+}
+
+.sec_term {
+    margin-top: 100px;
+}
+
+.sec_term h3 {
+    font-weight: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    line-height: 1em;
+}
+
+.sec_term .text b {
+    margin-bottom: 15px;
+    display: block;
+}
+
+
+/* --- END.general style for animation of accordion on the DOCUMENTS page --- */
+
+
+/* --- style for the donation section on the DONATE page --- */
+
+.sec_donate {
+    margin-top: 100px;
+}
+
+.sec_donate h3 {
+    font-weight: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    line-height: 1em;
+}
+
+.sec_donate .donate_wrap .one {
+    font-size: 18px;
+    line-height: 1em;
+    margin-bottom: 30px;
+}
+
+.sec_donate .donate_wrap .one .b {
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+
+.sec_donate .donate_wrap .one .s {
+    font-weight: 400;
+}
+
+
+/* --- END.style for the donation section on the DONATE page --- */
+
+
+/* --- general style of the form on the DONATE page --- */
+
+.form_donate .one_form_wrap {
+    margin-bottom: 15px;
+}
+
+.form_donate input,
+.form_donate select,
+.form_donate textarea {
+    border-radius: 5px;
+    background: #fbf6f2;
+    border: 1px solid #272727;
+    padding: 10px 15px;
+    color: #272727;
+    width: 100%;
+    opacity: 1;
+    position: relative;
+}
+
+.form_donate input::-webkit-input-placeholder,
+.form_donate select::-webkit-input-placeholder,
+.form_donate textarea::-webkit-input-placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input::-moz-placeholder,
+.form_donate select::-moz-placeholder,
+.form_donate textarea::-moz-placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input:-ms-input-placeholder,
+.form_donate select:-ms-input-placeholder,
+.form_donate textarea:-ms-input-placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input::-ms-input-placeholder,
+.form_donate select::-ms-input-placeholder,
+.form_donate textarea::-ms-input-placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input::placeholder,
+.form_donate select::placeholder,
+.form_donate textarea::placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input:-ms-input-placeholder,
+.form_donate select:-ms-input-placeholder,
+.form_donate textarea:-ms-input-placeholder {
+    color: #272727;
+}
+
+.form_donate input::-ms-input-placeholder,
+.form_donate select::-ms-input-placeholder,
+.form_donate textarea::-ms-input-placeholder {
+    color: #272727;
+}
+
+.form_donate select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form_donate .one_form_wrap_select {
+    position: relative;
+}
+
+.form_donate .one_form_wrap_select:after {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-weight: 900;
+    color: #272727;
+    top: 50%;
+    margin-top: -7px;
+    right: 15px;
+}
+
+.form_donate input:focus,
+.form_donate select:focus,
+.form_donate input:hover,
+.form_donate select:hover,
+.form_donate textarea:focus,
+.form_donate textarea:hover {
+    border: 1px solid #1C870A;
+}
+
+.form_donate input.error_line,
+.form_donate select.error_line,
+.form_donate textarea.error_line {
+    border: 1px solid red;
+}
+
+.form_donate button {
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: #D6300B;
+    color: #fff;
+    padding: 11px 54px;
+    border: none;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.form_donate button .fa-solid {
+    display: none;
+    margin-right: 10px;
+}
+
+.form_donate button:hover {
+    background: #1C870A;
+    color: #fff;
+}
+
+.form_donate button.load .fa-solid {
+    display: inline-block;
+}
+
+.form_donate .err_text_input {
+    color: red;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.form_donate .success_text {
+    text-align: center;
+    color: #1C870A;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+.form_donate .success {
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: transparent;
+    color: #1C870A;
+    padding: 11px 54px;
+    border: 2px solid #1C870A;
+    width: 100%;
+}
+
+.form_donate .error {
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: transparent;
+    color: #D6300B;
+    padding: 11px 54px;
+    border: 2px solid #D6300B;
+    width: 100%;
+}
+
+.form_donate input:placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input:-ms-input-placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate input:-ms-input-placeholder {
+    color: #272727;
+    opacity: 1;
+}
+
+.form_donate .half_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.form_donate .half_wrap .one_form_wrap {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+}
+
+.form_donate .half_wrap .one_form_wrap:nth-child(1) {
+    margin-right: 15px;
+}
+
+
+/* --- END.general style of the form on the DONATE page --- */
+
+
+/* --- gallery page styles --- */
+
+.sec_gall {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.sec_gall .filters {
+    border-radius: 20px;
+    border: 1px solid #272727;
+    background: #fbf6f2;
+    padding: 20px 35px;
+    margin-bottom: 50px;
+}
+
+.sec_gall .filters .title {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1em;
+    margin-bottom: 15px;
+}
+
+.sec_gall .one_slide_h {
+    margin-bottom: 30px;
+}
+
+.sec_gall .one_slide_h .img {
+    height: 300px;
+}
+
+
+/* customize the label (the container) */
+
+.container_f {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: 30px;
+}
+
+
+/* hide the browser's default checkbox */
+
+.container_f input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #181818;
+}
+
+
+/* on mouse-over, add a grey background color */
+
+.container_f:hover input~.checkmark {
+    background-color: #fff;
+    border: 1px solid #1C870A;
+}
+
+
+/* when the checkbox is checked, add a blue background */
+
+.container_f input:checked~.checkmark {
+    background-color: #fff;
+    border: 1px solid #1C870A;
+}
+
+
+/* create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* show the checkmark when checked */
+
+.container_f input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* style the checkmark/indicator */
+
+.container_f .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #1C870A;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* --- END.gallery page styles --- */
+
+
+/* --- styles for one pet page --- */
+
+.sec_one_pet {
+    margin-top: 100px;
+}
+
+.sec_one_pet .swiper_wrap {
+    margin-bottom: 50px;
+}
+
+.sec_one_pet h3 {
+    font-weight: 900;
+    line-height: 1em;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.sec_one_pet .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.sec_one_pet .list .one {
+    max-width: 200px;
+    line-height: 1em;
+}
+
+.sec_one_pet .list .one .b {
+    font-weight: 900;
+    margin-bottom: 3px;
+}
+
+
+/* --- END.styles for one pet page --- */
+
+
+/* --- responsive --- */
+
+
+/* --- for screens with maximum width of 1200 --- */
+
+@media screen and (max-width: 1200px) {
+    .btn_m {
+        padding: 10px 35px;
+    }
+}
+
+
+/* --- for screens with maximum width of 1100 --- */
+
+@media screen and (max-width: 1100px) {
+    .swiper-button-prev {
+        left: -5px;
+    }
+    .swiper-button-next {
+        right: -5px;
+    }
+}
+
+
+/* --- for screens with maximum width of 992 --- */
+
+@media screen and (max-width: 992px) {
+    .menu_wrap {
+        display: none;
+    }
+    header .burger {
+        display: block;
+    }
+    .sec_one_pet .list .one {
+        margin-bottom: 15px;
+        -ms-flex-preferred-size: 33%;
+        flex-basis: 33%;
+        padding-right: 15px;
+    }
+}
+
+
+/* --- for screens with maximum width of 768 --- */
+
+@media screen and (max-width: 768px) {
+    .sec_first_h h1 {
+        margin-top: 30px;
+        text-align: center;
+        max-width: 100%;
+    }
+    .sec_first_h h1:after {
+        left: 50%;
+        margin-left: -85px;
+    }
+    .sec_first_h .sub_text {
+        text-align: center;
+    }
+    .sec_first_h .btn_m_wrap .btn_m {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .menu_wrap {
+        display: none;
+    }
+    .pros {
+        margin-bottom: 30px;
+    }
+    .pros_last {
+        margin-bottom: 0;
+    }
+    .swiper-button-next {
+        right: 30px;
+    }
+    .swiper-button-prev {
+        left: 30px;
+    }
+    .left_con {
+        margin-top: 45px;
+        text-align: center;
+    }
+    .left_con .btn_m_wrap {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .title_left:before {
+        left: 50%;
+        margin-left: -50px;
+    }
+    .w_wrap {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .w_wrap_last {
+        margin-bottom: 0;
+    }
+    footer .social {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    footer .logo {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .sec_allocation {
+        margin-top: 50px;
+    }
+    .sec_allocation .stat_info_wrap {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+    }
+    .sec_allocation .stat_info_wrap .coll {
+        margin-bottom: 30px;
+    }
+    .sec_allocation .stat_info_wrap .coll:last-child {
+        margin-bottom: 0;
+    }
+    .sec_allocation .table_stat .one_row .title,
+    .sec_allocation .table_stat .one_row .text {
+        font-size: 16px;
+    }
+    .sec_allocation .table_stat_text {
+        line-height: 1.2em;
+    }
+    .sec_contact_c .contact_wrap {
+        margin-top: 30px;
+    }
+    .accordion {
+        margin-bottom: 100px;
+    }
+    .form_donate {
+        margin-bottom: 100px;
+    }
+    .sec_one_pet .list .one {
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    }
+}
+
+
+/* --- END.responsive --- */

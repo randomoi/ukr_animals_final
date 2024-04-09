@@ -1,0 +1,90 @@
+<%# insert the head section code that repeats on all pages %>
+    <%- include('../inc/head') %>
+        <%# insert header section code that repeats on all pages %>
+            <%- include('../inc/header') -%>
+                <%# insert the subheader section code that repeats on all pages %>
+                    <%- include('../inc/subheader') -%>
+                        <!-- section -->
+                        <section class="sec_def sec_gall">
+                            <!-- container -->
+                            <div class="container">
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-md-12">
+                                        <!-- filter wrapper -->
+                                        <div class="filters">
+                                            <!-- heading -->
+                                            <h2 class="title">Who are you looking for?</h2>
+                                            <!-- filter form -->
+                                            <form id="gallery_form" action="/gallery" method="POST">
+                                                <!-- first item in the form -->
+                                                <label class="container_f">Dog
+							<%# if there was a request in the line, then activate the necessary checkboxes %>
+							<% if(reqChek[0] == 'dog' || reqChek[1] == 'dog'){ %>
+								<input class="filtr_type" name="dog" type="checkbox" checked="checked" >
+							<% } else{ %>  
+								<input class="filtr_type" name="dog" type="checkbox" >
+							<% } %>
+							<span class="checkmark"></span>
+						</label>
+                                                <!-- second item in the form -->
+                                                <label class="container_f">Cat
+							<%# if there was a request in the line, then activate the necessary checkboxes %>
+							<% if(reqChek[0] == 'cat' || reqChek[1] == 'cat'){ %>
+								<input class="filtr_type" name="cat" type="checkbox" checked="checked" >
+							<% } else{ %>  
+								<input class="filtr_type" name="cat" type="checkbox">
+							<% } %>
+							<span class="checkmark"></span>
+						</label>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                                <div class="row">
+
+
+                                    <%# looping through 6 animals %>
+                                        <% for (var l = petsall.length, i = 0; i < l; i++) { %>
+
+                                            <%# denote the variable through the index iteration of the loop for further work %>
+                                                <% object = petsall[i]%>
+
+
+                                                    <%# since of all the images in the line we need the first one, then we assign the first value to the variable before the separator %>
+                                                        <%  var obj_img = object.img.split(',')[0]; %>
+
+                                                            <!-- column -->
+                                                            <div class="col-md-6 col-lg-3">
+                                                                <!-- wrapper -->
+                                                                <div class="one_slide_h">
+                                                                    <!-- link -->
+                                                                    <a href="/pet/<%= object.id %>"><span class="img" style="background-image: url(/img/<%= obj_img %>);"></span><span class="visually-hidden">image of a cute pet</span></a>
+                                                                    <!-- title+link -->
+                                                                    <div class="title">
+                                                                        <a href="/pet/<%= object.id %>">
+                                                                            <%= object.pet_name %>
+                                                                        </a>
+                                                                    </div>
+                                                                    <!-- text+link -->
+                                                                    <div class="text">
+                                                                        <a href="/pet/<%= object.id %>">
+                                                                            <%= object.breed %>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <% } %>
+
+
+
+
+                                </div>
+                            </div>
+                        </section>
+
+                        <%# insertfooter section code that repeats on all pages %>
+                            <%- include('../inc/footer') -%>

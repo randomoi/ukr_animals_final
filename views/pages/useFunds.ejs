@@ -1,0 +1,106 @@
+<%# insert the head section code that repeats on all pages %>
+    <%- include('../inc/head') %>
+        <%# insert header section code that repeats on all pages %>
+            <%- include('../inc/header') -%>
+                <%# insert the subheader section code that repeats on all pages %>
+                    <%- include('../inc/subheader') -%>
+                        <!-- wrapper -->
+                        <div class="sec_def sec_allocation">
+                            <!-- container -->
+                            <div class="container">
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-md-12">
+                                        <!-- wrapper -->
+                                        <div class="stat_info_wrap">
+                                            <!-- wrapper -->
+                                            <div class="coll">
+                                                <!-- header -->
+                                                <div class="title">Collected:</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allDonate %>
+                                                </div>
+                                            </div>
+                                            <!-- wrapper -->
+                                            <div class="coll">
+                                                <!-- header -->
+                                                <div class="title">Current balance:</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allOutput %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-md-12">
+                                        <!-- wrapper -->
+                                        <div class="table_stat">
+                                            <div class="one_row">
+                                                <!-- header -->
+                                                <div class="title">Food</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allFood %>
+                                                </div>
+                                            </div>
+                                            <div class="one_row">
+                                                <!-- header -->
+                                                <div class="title">Detergents</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allDetergents %>
+                                                </div>
+                                            </div>
+                                            <div class="one_row">
+                                                <!-- header -->
+                                                <div class="title">Veterinary Services</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allVeterinary %>
+                                                </div>
+                                            </div>
+                                            <div class="one_row">
+                                                <!-- header -->
+                                                <div class="title">Toys</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allToys %>
+                                                </div>
+                                            </div>
+                                            <div class="one_row">
+                                                <!-- header -->
+                                                <div class="title">Premises maintenance</div>
+                                                <!-- text -->
+                                                <div class="text">$
+                                                    <%= allPremises %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-md-12">
+                                        <!-- wrapper -->
+                                        <div class="table_stat_text">
+                                            <!-- text -->
+                                            <span>You can find our tax returns and organizational documents by clicking the button below.</span>
+                                            <!-- link button -->
+                                            <div class="btn_m_wrap">
+                                                <a class="btn_m" href="/documents">Documents</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%# insert footer section code that repeats on all pages %>
+                            <%- include('../inc/footer') -%>

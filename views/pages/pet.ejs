@@ -1,0 +1,365 @@
+<%# insert the head section code that repeats on all pages %>
+    <%- include('../inc/head') %>
+        <%# insert header section code that repeats on all pages %>
+            <%- include('../inc/header') -%>
+                <%# insert the subheader section code that repeats on all pages %>
+                    <%- include('../inc/subheader') -%>
+                        <!-- section -->
+                        <section class="sec_def sec_one_pet">
+                            <!-- container -->
+                            <div class="container">
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-md-12">
+                                        <!-- wrapper -->
+                                        <div class="swiper_wrap">
+                                            <!-- wrapper -->
+                                            <div class="swiper mySwiper">
+                                                <!-- wrapper -->
+                                                <div class="swiper-wrapper">
+                                                    <%# output images through loop %>
+                                                        <% for (var l = img.length, i = 0; i < l; i++) { %>
+                                                            <% object = img[i]%>
+                                                                <!-- wrapper -->
+                                                                <div class="swiper-slide">
+                                                                    <!-- wrapper -->
+                                                                    <div class="one_slide_h">
+                                                                        <!-- link -->
+                                                                        <a href="/img/<%= object %>" data-fancybox="gallery"><span class="img" style="background-image: url(/img/<%= object %>);"></span><span class="visually-hidden">image of a cute pet</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                </div>
+                                            </div>
+                                            <!-- control buttons -->
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-md-12">
+                                        <!-- header -->
+                                        <h3>About me</h3>
+                                        <!-- wrapper -->
+                                        <div class="list">
+                                            <!-- wrapper -->
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Age:</div>
+                                                <div class="s">
+                                                    <%= age %>
+                                                </div>
+                                            </div>
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Sex:</div>
+                                                <!-- text -->
+                                                <div class="s">
+                                                    <%= sex %>
+                                                </div>
+                                            </div>
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Breed:</div>
+                                                <!-- text -->
+                                                <div class="s">
+                                                    <%= breed %>
+                                                </div>
+                                            </div>
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Color:</div>
+                                                <!-- text -->
+                                                <div class="s">
+                                                    <%= color %>
+                                                </div>
+                                            </div>
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Child friendly:</div>
+                                                <!-- text -->
+                                                <div class="s">
+                                                    <%= friendliness %>
+                                                </div>
+                                            </div>
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Size:</div>
+                                                <!-- text -->
+                                                <div class="s">
+                                                    <%= size %>
+                                                </div>
+                                            </div>
+                                            <div class="one">
+                                                <!-- mini header -->
+                                                <div class="b">Energy level:</div>
+                                                <!-- text -->
+                                                <div class="s">
+                                                    <%= energy_level %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                                <div class="row">
+                                    <!-- column -->
+                                    <div class="col-lg-6">
+                                        <!-- header -->
+                                        <h3>My story</h3>
+                                        <!-- text -->
+                                        <div class="text">
+                                            <%- about %>
+                                        </div>
+                                    </div>
+                                    <!-- column -->
+                                    <div class="col-lg-6">
+                                        <!-- header -->
+                                        <h3>Apply to Adopt</h3>
+                                        <!-- donation form -->
+                                        <form id="form_pet_adopt" action="#" class="form_donate">
+                                            <!-- first name -->
+                                            <div class="one_form_wrap">
+                                                <input type="text" class="first_name form-control" placeholder="First Name *" required>
+                                            </div>
+                                            <!-- last name -->
+                                            <div class="one_form_wrap">
+                                                <input type="text" class="last_name form-control" placeholder="Last Name *" required>
+                                            </div>
+                                            <!-- email -->
+                                            <div class="one_form_wrap">
+                                                <input type="email" class="email form-control" placeholder="Email *" required>
+                                                <div class="err_text_input email_err d-none">
+                                                    Please enter valid email.
+                                                </div>
+                                            </div>
+                                            <!-- phone number -->
+                                            <div class="one_form_wrap">
+                                                <input type="number" type="text" minlength="5" class="phone input_just_number form-control" placeholder="Phone Number *" required>
+                                            </div>
+                                            <!-- country/region -->
+                                            <div class="one_form_wrap  one_form_wrap_select">
+                                                <select class="country form-select" aria-label="Country/Region">
+							<option selected>Country/Region *</option>
+							<option>Afghanistan</option>
+							<option>Albania</option>
+							<option>Algeria</option>
+							<option>Andorra</option>
+							<option>Angola</option>
+							<option>Antigua & Deps</option>
+							<option>Argentina</option>
+							<option>Armenia</option>
+							<option>Australia</option>
+							<option>Austria</option>
+							<option>Azerbaijan</option>
+							<option>Bahamas</option>
+							<option>Bahrain</option>
+							<option>Bangladesh</option>
+							<option>Barbados</option>
+							<option>Belarus</option>
+							<option>Belgium</option>
+							<option>Belize</option>
+							<option>Benin</option>
+							<option>Bhutan</option>
+							<option>Bolivia</option>
+							<option>Bosnia Herzegovina</option>
+							<option>Botswana</option>
+							<option>Brazil</option>
+							<option>Brunei</option>
+							<option>Bulgaria</option>
+							<option>Burkina</option>
+							<option>Burundi</option>
+							<option>Cambodia</option>
+							<option>Cameroon</option>
+							<option>Canada</option>
+							<option>Cape Verde</option>
+							<option>Central African Rep</option>
+							<option>Chad</option>
+							<option>Chile</option>
+							<option>China</option>
+							<option>Colombia</option>
+							<option>Comoros</option>
+							<option>Congo</option>
+							<option>Congo {Democratic Rep}</option>
+							<option>Costa Rica</option>
+							<option>Croatia</option>
+							<option>Cuba</option>
+							<option>Cyprus</option>
+							<option>Czech Republic</option>
+							<option>Denmark</option>
+							<option>Djibouti</option>
+							<option>Dominica</option>
+							<option>Dominican Republic</option>
+							<option>East Timor</option>
+							<option>Ecuador</option>
+							<option>Egypt</option>
+							<option>El Salvador</option>
+							<option>Equatorial Guinea</option>
+							<option>Eritrea</option>
+							<option>Estonia</option>
+							<option>Ethiopia</option>
+							<option>Fiji</option>
+							<option>Finland</option>
+							<option>France</option>
+							<option>Gabon</option>
+							<option>Gambia</option>
+							<option>Georgia</option>
+							<option>Germany</option>
+							<option>Ghana</option>
+							<option>Greece</option>
+							<option>Grenada</option>
+							<option>Guatemala</option>
+							<option>Guinea</option>
+							<option>Guinea-Bissau</option>
+							<option>Guyana</option>
+							<option>Haiti</option>
+							<option>Honduras</option>
+							<option>Hungary</option>
+							<option>Iceland</option>
+							<option>India</option>
+							<option>Indonesia</option>
+							<option>Iran</option>
+							<option>Iraq</option>
+							<option>Ireland {Republic}</option>
+							<option>Israel</option>
+							<option>Italy</option>
+							<option>Ivory Coast</option>
+							<option>Jamaica</option>
+							<option>Japan</option>
+							<option>Jordan</option>
+							<option>Kazakhstan</option>
+							<option>Kenya</option>
+							<option>Kiribati</option>
+							<option>Korea North</option>
+							<option>Korea South</option>
+							<option>Kosovo</option>
+							<option>Kuwait</option>
+							<option>Kyrgyzstan</option>
+							<option>Laos</option>
+							<option>Latvia</option>
+							<option>Lebanon</option>
+							<option>Lesotho</option>
+							<option>Liberia</option>
+							<option>Libya</option>
+							<option>Liechtenstein</option>
+							<option>Lithuania</option>
+							<option>Luxembourg</option>
+							<option>Macedonia</option>
+							<option>Madagascar</option>
+							<option>Malawi</option>
+							<option>Malaysia</option>
+							<option>Maldives</option>
+							<option>Mali</option>
+							<option>Malta</option>
+							<option>Marshall Islands</option>
+							<option>Mauritania</option>
+							<option>Mauritius</option>
+							<option>Mexico</option>
+							<option>Micronesia</option>
+							<option>Moldova</option>
+							<option>Monaco</option>
+							<option>Mongolia</option>
+							<option>Montenegro</option>
+							<option>Morocco</option>
+							<option>Mozambique</option>
+							<option>Myanmar, {Burma}</option>
+							<option>Namibia</option>
+							<option>Nauru</option>
+							<option>Nepal</option>
+							<option>Netherlands</option>
+							<option>New Zealand</option>
+							<option>Nicaragua</option>
+							<option>Niger</option>
+							<option>Nigeria</option>
+							<option>Norway</option>
+							<option>Oman</option>
+							<option>Pakistan</option>
+							<option>Palau</option>
+							<option>Panama</option>
+							<option>Papua New Guinea</option>
+							<option>Paraguay</option>
+							<option>Peru</option>
+							<option>Philippines</option>
+							<option>Poland</option>
+							<option>Portugal</option>
+							<option>Qatar</option>
+							<option>Romania</option>
+							<option>Russian Federation</option>
+							<option>Rwanda</option>
+							<option>St Kitts & Nevis</option>
+							<option>St Lucia</option>
+							<option>Saint Vincent & the Grenadines</option>
+							<option>Samoa</option>
+							<option>San Marino</option>
+							<option>Sao Tome & Principe</option>
+							<option>Saudi Arabia</option>
+							<option>Senegal</option>
+							<option>Serbia</option>
+							<option>Seychelles</option>
+							<option>Sierra Leone</option>
+							<option>Singapore</option>
+							<option>Slovakia</option>
+							<option>Slovenia</option>
+							<option>Solomon Islands</option>
+							<option>Somalia</option>
+							<option>South Africa</option>
+							<option>South Sudan</option>
+							<option>Spain</option>
+							<option>Sri Lanka</option>
+							<option>Sudan</option>
+							<option>Suriname</option>
+							<option>Swaziland</option>
+							<option>Sweden</option>
+							<option>Switzerland</option>
+							<option>Syria</option>
+							<option>Taiwan</option>
+							<option>Tajikistan</option>
+							<option>Tanzania</option>
+							<option>Thailand</option>
+							<option>Togo</option>
+							<option>Tonga</option>
+							<option>Trinidad & Tobago</option>
+							<option>Tunisia</option>
+							<option>Turkey</option>
+							<option>Turkmenistan</option>
+							<option>Tuvalu</option>
+							<option>Uganda</option>
+							<option>Ukraine</option>
+							<option>United Arab Emirates</option>
+							<option>United Kingdom</option>
+							<option>United States</option>
+							<option>Uruguay</option>
+							<option>Uzbekistan</option>
+							<option>Vanuatu</option>
+							<option>Vatican City</option>
+							<option>Venezuela</option>
+							<option>Vietnam</option>
+							<option>Yemen</option>
+							<option>Zambia</option>
+							<option>Zimbabwe</option>
+						</select>
+                                            </div>
+                                            <!-- text area -->
+                                            <div class="one_form_wrap">
+                                                <textarea class="any_text" rows="5" placeholder="Please write your message here."></textarea>
+                                            </div>
+                                            <!-- hidden field with pageid -->
+                                            <input type="hidden" id="pageid" name="pageid" value="<%= pageid %>">
+                                            <!-- button -->
+                                            <button class="submit" type="submit"><i class="fa-solid fa-spinner"></i> Submit an application</button>
+                                            <!-- success message -->
+                                            <div class="success d-none"><i class="fa-solid fa-circle-check"></i> Success!</div>
+                                            <!-- error message -->
+                                            <div class="error d-none"><i class="fa-solid fa-circle-xmark"></i> Try re-entering the data</div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <%# insert footer section code that repeats on all pages %>
+                            <%- include('../inc/footer') -%>
