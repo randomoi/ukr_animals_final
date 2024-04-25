@@ -1,10 +1,5 @@
 # UKRAINE ANIMALS - PET RESCUE WEBSITE
 
-- Project: Ukraine Animals - Pet Rescue Website
-- Student Name: https://github.com/randomoi/
-
-
-### ABOUT
  A user-friendly website for international donors to assist displaced Ukrainian animals. The user-centered design can efficiently translate the website into over 100 languages, streamline the donation process, provide essential financial disclosure information to build trust, and match international donors with adoptable pets. The website is intended for international donors, adopters, and third-party grant officers.
 
 
@@ -79,3 +74,5 @@ Tested in:
 ![Contact](./public/img/design/contact.png)
 ![Terms](./public/img/design/terms.png)
 ![Policy](./public/img/design/policy.png)
+
+*Author: https://github.com/randomoi/*
